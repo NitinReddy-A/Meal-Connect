@@ -14,9 +14,9 @@ Distribution History: Tracks the history of food distributions, including detail
 
 ##Technologies Used
 
-Backend: Node.js, Express.js, MySQL
-Frontend: ejs,css,js
-Database: MySQL (via phpMyAdmin)
+-Backend: Node.js, Express.js, MySQL
+-Frontend: ejs,css,js
+-Database: MySQL (via phpMyAdmin)
 
 ##Getting Started
 
