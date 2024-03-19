@@ -1,0 +1,42 @@
+<!----------------------------- Home Page ----------------------------------->
+<html>
+<head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="wrapper" style="background-image: url(index.jpg); background-repeat: no-repeat;
+ background-size: cover;">
+        <!----------------------------- Navbar ----------------------------------->
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="#" class="link">
+                    <p>MEAL CONNECT</p>
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="/restaurant"  class="link">Restaurant</a></li>
+                    <li><a href="/charity"  class="link">Charity</a></li>
+                    <li><a href="/pickup"  class="link">Pickup</a></li>
+                </ul>
+                <div class="content-container"></div>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+        <!----------------------------- Title div ----------------------------------->
+        <div class="form-box">
+            <div class="login-container" id="login">
+                <div class="top" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="logo.jpeg" width="400px">
+                    <header>FOOD WASTAGE REDUCTION SYSTEM</header>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/script.js"></script>
+</body>
+</html>

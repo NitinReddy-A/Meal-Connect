@@ -1,0 +1,148 @@
+<!-------------------Restaurant page after Login --------------------------> 
+<html>
+<head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="\style.css">
+    <title>Restaurant Home</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!----------------------------- Navbar ----------------------------------->
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="#" class="link"><p>MEAL CONNECT</p></a>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="login()">DASHBOARD</button>
+                <button class="btn" id="registerBtn" onclick="register()">HISTORY</button>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a data-modal-target="#modal" style="cursor: pointer;" class="link">Post</a></li>
+                    <form action="/logout?_method=DELETE" method="POST">
+                        <li><a class="link"><input type="submit" class="submit" value="Logout"></a></li>
+                    </form>
+                </ul>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+        <!----------------------------- MODAL TO POST FOOD ITEMS ----------------------------------->
+        <div class="modal" id="modal">
+            <div class="modal-header">
+              <div class="title">POST Food Items</div>
+              <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form action="/restaurant/<%= id %>/postFoodItem" method="post">
+                    <div>
+                        <div class="two-forms">
+                            <div class="input-box1">
+                                <input type="text" class="input-field1" name="ItemName" placeholder="Item name" required>
+                                <i class='bx bxs-bowl-hot'></i>
+                            </div>
+                            <div class="input-box1">
+                                <input type="text" class="input-field1" name="Category" placeholder="Category" required>
+                                <i class='bx bx-food-tag' ></i>
+                            </div>
+                        </div>
+                        <div class="input-box1">
+                            <input type="number" class="input-field1" name="Qty" placeholder="Quantity(No. of Servings)" required>
+                            <i class="bx bx-user"></i>
+                        </div>
+                        <div class="input-box1">
+                            <label for="date">Expiry Date (required)</label>
+                            <input type="date" class="input-field1" name="date" placeholder="Expiry Date" required>
+                            <i class='bx bx-time-five' ></i>
+                        </div>
+                        <div class="input-box1">
+                            <input type="submit" class="submit1" value="POST">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="overlay"></div>    
+        <!----------------------------- Home ----------------------------------->
+        <div class="form-box" >
+            <!------------------- Dashboard section -------------------------->
+            <div class="login-container" id="login">
+                <div class="top">
+                    <span>Your Unique Restaurant ID : <%= id %></span>
+                    <header>Hi Restaurant <%= id %> </header>
+                    <div class="table" id="customers_table">
+                        <section class="table__body">
+                            <table id="table">
+                                <thead>
+                                    <tr>
+                                        <th> Food Id <span class="icon-arrow"></span></th>
+                                        <th> Category <span class="icon-arrow"></span></th>
+                                        <th> Item <span class="icon-arrow"></span></th>
+                                        <th> Quantity <span class="icon-arrow"></span></th>
+                                        <th> Status <span class="icon-arrow"></span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablebod">
+                                    <% if (foodData && foodData.length) { %>
+                                        <% foodData.forEach(food => { %>
+                                            <tr>
+                                                <td><%= food.foodid %></td>
+                                                <td><%= food.cat %></td>
+                                                <td><%= food.item %></td>
+                                                <td><%= food.qty %></td>
+                                                <td><%= food.status %></td>
+                                            </tr>
+                                        <% }); %>
+                                    <% } else { %>
+                                        <tr>
+                                            <td colspan="5">No data available</td>
+                                        </tr>
+                                    <% } %>
+                                </tbody>
+                            </table>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <!-------------------Distribution History Section -------------------------->       
+            <div class="register-container" id="register">
+                <div class="table" id="customers_table">
+                    <section>
+                        <header>DISTRIBUTION HISTORY</header>                       
+                    </section>
+                    <section class="table__body">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th> Distribution Id <span class="icon-arrow"></span></th>
+                                    <th> Food Id <span class="icon-arrow"></span></th>
+                                    <th> Charity ID <span class="icon-arrow"></span></th>
+                                    <th> Schedule ID <span class="icon-arrow"></span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="tablebodD">
+                                <% if (DeliveredData && DeliveredData.length) { %>
+                                    <% DeliveredData.forEach(food => { %>
+                                        <tr>
+                                            <td><%= food.distributionid %></td>
+                                            <td><%= food.foodid %></td>
+                                            <td><%= food.charityid %></td>
+                                            <td><%= food.scheduleid %></td>
+                                        </tr>
+                                    <% }); %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="4">No data available</td>
+                                    </tr>
+                                <% } %>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="\script.js"></script>
+</body>
+</html>

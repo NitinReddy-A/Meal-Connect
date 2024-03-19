@@ -1,0 +1,124 @@
+<!----------------------------- Restaurants Login and Registration Page  ----------------------------------->
+<html>
+<head>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Login & Registration For Restaurant</title>
+</head>
+
+<body>
+    <div class="wrapper" style="background-image: url(restaurant.jpg); background-repeat: no-repeat;
+ background-size: cover;">
+        <!----------------------------- Navbar ----------------------------------->
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="/" class="link">
+                    <p>MEAL CONNECT</p>
+                </a>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="/restaurant" class="link active">Restaurant</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="login()">Login</button>
+                <button class="btn" id="registerBtn" onclick="register()">Register</button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+        <!----------------------------- Form box ----------------------------------->
+        <div class="form-box">
+            <!------------------- login form -------------------------->
+            <div class="login-container" id="login">
+                <form action="/restaurant/login" method="post">
+                    <div class="top">
+                        <span>Don't have an account? <a href="#" onclick="register()">Register</a></span>
+                        <header>Login</header>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" id="username" name="username"
+                            placeholder="Restaurant name" required>
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" id="password" name="password" placeholder="Password"
+                            required>
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Sign In">
+                    </div>
+                </form>
+            </div>
+            <!------------------- registration form -------------------------->
+            <div class="register-container" id="register">
+                <form action="/restaurant/register" method="post">
+                    <div class="top">
+                        <span>Have an account? <a href="#" onclick="login()">Login</a></span>
+                        <header>Sign Up</header>
+                    </div>
+                    <div class="two-forms">
+                        <div class="input-box">
+                            <input type="text" class="input-field" name="username" placeholder="Restaurant name"
+                                required>
+                            <i class="bx bx-user"></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="tel" class="input-field" name="contact" placeholder="Contact No." required>
+                            <i class="bx bx-phone"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" class="input-field" name="email" placeholder="Email" required>
+                        <i class="bx bx-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" name="password" placeholder="Password" required>
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Register">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!----------------------------- Script to implement the contact no. and password constraint ----------------------------------->
+    <script>
+        document.getElementById('register').addEventListener('submit', function (event) {
+            var contactInput = document.querySelector('input[name="contact"]');
+            var contactNumber = contactInput.value;
+            var passwordInput = document.querySelector('input[name="password"]');
+            var password = passwordInput.value;
+            // Check if the contact number consists of only one digit
+            if (!/^\d{10}$/.test(contactNumber)) {
+                alert('Contact number must consist exactly 10 digit.');
+                event.preventDefault(); // Prevent form submission
+            }
+            // Check password requirements
+            var hasUpperCase = /[A-Z]/.test(password);
+            var hasLowerCase = /[a-z]/.test(password);
+            var hasNumber = /\d/.test(password);
+            var hasSpecialChar = /[@$!%*#?&]/.test(password);
+            var isLongEnough = password.length >= 8;
+            if (!isLongEnough) {
+                alert('Password must be at least  8 characters long.');
+                event.preventDefault(); // Prevent form submission
+            } else if (!hasNumber) {
+                alert('Password must contain at least one number.');
+                event.preventDefault(); // Prevent form submission
+            } else if (!hasUpperCase) {
+                alert('Password must contain at least one uppercase letter.');
+                event.preventDefault(); // Prevent form submission
+            } else if (!hasSpecialChar) {
+                alert('Password must contain at least one special character (@$!%*#?&).');
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
+    <script src="/script.js"></script>
+</body>
+</html>
