@@ -1,4 +1,4 @@
-# Meal Connect -- (A fullstack website)
+# Meal Connect - (A fullstack website)
 
 ## Overview
 
@@ -14,9 +14,11 @@ Distribution History: Tracks the history of food distributions, including detail
 
 ### Techstack
 
-    -Backend: Node.js, Express.js, MySQL
-    -Frontend: ejs,css,js
-    -Database: MySQL (via phpMyAdmin)
+Backend: Node.js, Express.js, MySQL
+
+Frontend: ejs,css,js
+
+Database: MySQL (via phpMyAdmin)
 
 ## Getting Started
 
