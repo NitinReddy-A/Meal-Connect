@@ -1,7 +1,7 @@
 ---------------Creating Database and Using it-------------------
 
 CREATE DATABASE MEAL_CONNECT;
-USE MEALCONNECT;
+USE MEAL_CONNECT;
 
 ---------------Creating Tables-------------------
 
