@@ -76,7 +76,7 @@
                         <i class="bx bx-envelope"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" class="input-field" name="password" placeholder="Password" required>
+                        <input type="password" class="input-field" name="password1" placeholder="Password" required>
                         <i class="bx bx-lock-alt"></i>
                     </div>
                     <div class="input-box">
@@ -91,19 +91,19 @@
         document.getElementById('register').addEventListener('submit', function (event) {
             var contactInput = document.querySelector('input[name="contact"]');
             var contactNumber = contactInput.value;
-            var passwordInput = document.querySelector('input[name="password"]');
-            var password = passwordInput.value;
+            var passwordInput = document.querySelector('input[name="password1"]');
+            var password1 = passwordInput.value;
             // Check if the contact number consists of only one digit
             if (!/^\d{10}$/.test(contactNumber)) {
                 alert('Contact number must consist exactly 10 digit.');
                 event.preventDefault(); // Prevent form submission
             }
             // Check password requirements
-            var hasUpperCase = /[A-Z]/.test(password);
-            var hasLowerCase = /[a-z]/.test(password);
-            var hasNumber = /\d/.test(password);
-            var hasSpecialChar = /[@$!%*#?&]/.test(password);
-            var isLongEnough = password.length >= 8;
+            var hasUpperCase = /[A-Z]/.test(password1);
+            var hasLowerCase = /[a-z]/.test(password1);
+            var hasNumber = /\d/.test(password1);
+            var hasSpecialChar = /[@$!%*#?&]/.test(password1);
+            var isLongEnough = password1.length >= 8;
             if (!isLongEnough) {
                 alert('Password must be at least  8 characters long.');
                 event.preventDefault(); // Prevent form submission

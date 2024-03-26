@@ -48,7 +48,7 @@ function registerRUser(userData) {
             userData.username,
             userData.contact,
             userData.email,
-            userData.password
+            userData.password1
         ], (error, results) => {
             if (error) {
                 reject(error);
