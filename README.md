@@ -1,4 +1,4 @@
-# Meal Connect - (A fullstack website)
+# Meal Connect
 
 ## Overview
 
