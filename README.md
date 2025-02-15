@@ -104,16 +104,6 @@ Run the server using the following command:
 
 ---
 
-## 🖼️ Screenshots (Add relevant images here)
-
-| **Feature** | **Screenshot** |
-|-------------|-----------------|
-| Restaurant Management | ![Restaurant Screenshot](link-to-image) |
-| Charity Registration | ![Charity Screenshot](link-to-image) |
-| Food Tracking | ![Food Tracking Screenshot](link-to-image) |
-
----
-
 ## 🤝 Contribute to Meal Connect
 
 Join us in the mission to reduce food wastage and support those in need. Contributions, feedback, and feature requests are always welcome!
