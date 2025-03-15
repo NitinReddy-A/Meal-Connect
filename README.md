@@ -109,7 +109,7 @@ Run the server using the following command:
 Join us in the mission to reduce food wastage and support those in need. Contributions, feedback, and feature requests are always welcome!
 
 - **🔗 Repo:** [Meal Connect on GitHub](https://github.com/YourUsername/MealConnect)
-- **📬 Contact:** [Your email/Discord/etc.]
+- **📬 Contact:**nitin.code2@gmail.com
 
 ---
 
